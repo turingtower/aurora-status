@@ -77,6 +77,10 @@ status-website:
         box-shadow: none !important;
         margin: 14px 0 !important;
       }
+      /* hide hollow sections (e.g. active-incidents when there are none) */
+      main > section:not(:first-of-type):not(.live-status):not(:has(h2, h3, article, p, a, img)) {
+        display: none !important;
+      }
       /* …except the operational banner (first section) */
       main > section:first-of-type {
         background: linear-gradient(180deg, rgba(34,211,238,0.06), rgba(16,26,46,0.9)) !important;
