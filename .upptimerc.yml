@@ -139,13 +139,7 @@ status-website:
       a:hover { color: #67e8f9 !important; }
       img[alt*='up'], img[alt*='down'] { filter: saturate(1.1); }
       img[src*='graphs'] { background: transparent !important; border-radius: 10px; }
-      footer {
-        background: transparent !important;
-        border-top: 1px solid var(--aurora-border) !important;
-        color: var(--aurora-muted) !important;
-        padding: 18px 0 !important;
-      }
-      footer a { color: var(--aurora-muted) !important; }
+      footer { display: none !important; }
       ::selection { background: rgba(34, 211, 238, 0.3); }
     </style>
 
