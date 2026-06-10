@@ -77,21 +77,23 @@ status-website:
         box-shadow: none !important;
         margin: 14px 0 !important;
       }
-      /* hide hollow sections (e.g. active-incidents when there are none) */
-      main > section:not(:first-of-type):not(.live-status):not(:has(h2, h3, article, p, a, img)) {
-        display: none !important;
-      }
-      /* …except the operational banner (first section) */
-      main > section:first-of-type {
-        background: linear-gradient(180deg, rgba(34,211,238,0.06), rgba(16,26,46,0.9)) !important;
-        border: 1px solid var(--aurora-border) !important;
+      /* the overall-status banner is article.up / article.down */
+      main > article.up, main > article.down {
         border-radius: 14px !important;
         padding: 22px 24px !important;
         font-size: 17px; font-weight: 600;
         box-shadow: 0 8px 30px rgba(2, 8, 20, 0.45) !important;
       }
-      /* …and the per-monitor live-status card + incident articles */
-      .live-status, main article {
+      main > article.up {
+        background: linear-gradient(180deg, rgba(52, 211, 153, 0.08), rgba(16, 26, 46, 0.92)) !important;
+        border: 1px solid rgba(52, 211, 153, 0.25) !important;
+      }
+      main > article.down {
+        background: linear-gradient(180deg, rgba(244, 63, 94, 0.10), rgba(16, 26, 46, 0.92)) !important;
+        border: 1px solid rgba(244, 63, 94, 0.35) !important;
+      }
+      /* the per-monitor live-status card + incident articles */
+      .live-status, main section article {
         background: var(--aurora-panel) !important;
         border: 1px solid var(--aurora-border) !important;
         border-radius: 14px !important;
