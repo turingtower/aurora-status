@@ -1,17 +1,13 @@
 # Aurora platform status — Upptime configuration
-# Monitored URLs are repository SECRETS ($PROD_HEALTH_URL etc.) so customer
-# hostnames never appear in this public repo. Set them under
-# Settings → Secrets and variables → Actions.
+# The monitored URL is a repository SECRET ($PROD_HEALTH_URL) so no hostname
+# appears in this public repo. One monitor on purpose: a simple
+# "Aurora is up / down" page — no per-environment or per-tenant detail.
 owner: turingtower
-repo: status
+repo: aurora-status
 
 sites:
-  - name: Aurora Platform (Production)
+  - name: Aurora Platform
     url: $PROD_HEALTH_URL
-    expectedStatusCodes:
-      - 200
-  - name: Aurora Demo Environment
-    url: $DEMO_HEALTH_URL
     expectedStatusCodes:
       - 200
 
@@ -25,6 +21,5 @@ status-website:
       href: /
   theme: dark
 
-# Probe cadence: every 5 minutes (Upptime default for uptime checks).
-# Response-time graphs commit daily. Incidents auto-open GitHub issues —
-# subscribe to the repo to get notified.
+# Probe cadence: every 5 minutes (Upptime default). Response-time graphs
+# commit daily. Incidents auto-open GitHub issues — watch the repo for email.
