@@ -1,31 +1,30 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Aurora platform status — Upptime configuration
+# Monitored URLs are repository SECRETS ($PROD_HEALTH_URL etc.) so customer
+# hostnames never appear in this public repo. Set them under
+# Settings → Secrets and variables → Actions.
+owner: turingtower
+repo: status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  - name: Aurora Platform (Production)
+    url: $PROD_HEALTH_URL
+    expectedStatusCodes:
+      - 200
+  - name: Aurora Demo Environment
+    url: $DEMO_HEALTH_URL
+    expectedStatusCodes:
+      - 200
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.aurora.turingtower.com
+  name: Aurora Status
+  introTitle: "**Aurora by Turing Tower** — platform status"
+  introMessage: Live availability of the Aurora platform, updated every 5 minutes. Incident history is published below.
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+  theme: dark
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Probe cadence: every 5 minutes (Upptime default for uptime checks).
+# Response-time graphs commit daily. Incidents auto-open GitHub issues —
+# subscribe to the repo to get notified.
