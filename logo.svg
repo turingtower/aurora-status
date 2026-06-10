@@ -1,0 +1,10 @@
+<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round">
+  <!-- Turing Tower isometric "T" — brand mark (navy outline, cyan top, white front) -->
+  <path d="M58 24 L70 30 L70 46 L58 40 Z" fill="#0c2545" stroke="#0c2545" stroke-width="2"/>
+  <path d="M10 30 L58 30 L58 46 L10 46 Z" fill="#ffffff" stroke="#0c2545" stroke-width="2"/>
+  <path d="M22 24 L70 24 L58 30 L10 30 Z" fill="#22d3ee" stroke="#0c2545" stroke-width="2"/>
+  <path d="M40 46 L46 42 L46 70 L40 74 Z" fill="#0c2545" stroke="#0c2545" stroke-width="2"/>
+  <path d="M40 46 L40 74 L24 74 L24 58 Q 24 46 36 46 Z" fill="#ffffff" stroke="#0c2545" stroke-width="2"/>
+  <path d="M36 46 Q 28 46 24 50 L24 46 L40 46 Z" fill="#22d3ee" stroke="none" opacity="0.55"/>
+  <path d="M22 24 L70 24 L70 46 L46 46 L46 70 L40 74 L24 74 L24 58 Q 24 46 36 46 L10 46 L10 30 Z" stroke="#0c2545" stroke-width="2.5" fill="none"/>
+</svg>
