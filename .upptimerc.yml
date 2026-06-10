@@ -60,32 +60,84 @@ status-website:
       h1, h2, h3, h4 { color: var(--aurora-text) !important; letter-spacing: -0.01em; }
       .lead, p { color: var(--aurora-muted) !important; }
       .lead strong, h1 strong, h2 strong { color: var(--aurora-cyan) !important; }
-      /* the big live-status banner */
-      .live-status {
-        background: var(--aurora-panel) !important;
+      /* centered column */
+      main.container, nav > .container {
+        max-width: 1040px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+      main.container { padding-top: 28px !important; padding-bottom: 48px !important; }
+      nav img { width: 34px; height: 34px; }
+      /* sections default to invisible wrappers (kills empty slivers)… */
+      main > section {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 14px 0 !important;
+      }
+      /* …except the operational banner (first section) */
+      main > section:first-of-type {
+        background: linear-gradient(180deg, rgba(34,211,238,0.06), rgba(16,26,46,0.9)) !important;
         border: 1px solid var(--aurora-border) !important;
         border-radius: 14px !important;
-        color: var(--aurora-text) !important;
+        padding: 22px 24px !important;
+        font-size: 17px; font-weight: 600;
         box-shadow: 0 8px 30px rgba(2, 8, 20, 0.45) !important;
       }
-      /* cards / sections / link rows */
-      .container section, .container article, .container .f.r, main section {
+      /* …and the per-monitor live-status card + incident articles */
+      .live-status, main article {
         background: var(--aurora-panel) !important;
         border: 1px solid var(--aurora-border) !important;
         border-radius: 14px !important;
+        padding: 20px 22px !important;
+        color: var(--aurora-text) !important;
         box-shadow: 0 8px 30px rgba(2, 8, 20, 0.35) !important;
+      }
+      /* "Live Status" heading + range pills on one row */
+      .f.changed {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: wrap; gap: 12px;
+        background: transparent !important; border: none !important; box-shadow: none !important;
+        margin-top: 26px !important;
+      }
+      .f.changed h2 { margin: 0 !important; font-size: 20px; }
+      /* the 24h/7d/30d/1y/all selector → inline pill group */
+      form.f.r {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        gap: 6px;
+        background: var(--aurora-panel) !important;
+        border: 1px solid var(--aurora-border) !important;
+        border-radius: 999px !important;
+        padding: 4px !important;
+        box-shadow: none !important;
+      }
+      form.f.r > div { display: inline-flex !important; }
+      form.f.r input[type='radio'] { position: absolute; opacity: 0; pointer-events: none; }
+      form.f.r label {
+        display: inline-block; cursor: pointer;
+        padding: 5px 14px; border-radius: 999px;
+        font-size: 13px; font-weight: 600; color: var(--aurora-muted);
+        transition: all .15s ease;
+      }
+      form.f.r label:hover { color: var(--aurora-text); }
+      form.f.r input:checked + label {
+        background: rgba(34, 211, 238, 0.14);
+        color: var(--aurora-cyan);
       }
       a { color: var(--aurora-cyan) !important; text-decoration: none; }
       a:hover { color: #67e8f9 !important; }
-      /* status pills keep their semantic colors but soften */
       img[alt*='up'], img[alt*='down'] { filter: saturate(1.1); }
-      /* graphs sit on dark cleanly */
       img[src*='graphs'] { background: transparent !important; border-radius: 10px; }
-      /* footer */
       footer {
         background: transparent !important;
         border-top: 1px solid var(--aurora-border) !important;
         color: var(--aurora-muted) !important;
+        padding: 18px 0 !important;
       }
       footer a { color: var(--aurora-muted) !important; }
       ::selection { background: rgba(34, 211, 238, 0.3); }
