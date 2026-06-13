@@ -1,7 +1,7 @@
 url: $PROD_HEALTH_URL
 status: up
 code: 200
-responseTime: 505
-lastUpdated: 2026-06-12T23:27:59.403Z
+responseTime: 827
+lastUpdated: 2026-06-13T23:22:35.512Z
 startTime: 2026-06-10T20:06:51.379Z
 generator: Upptime <https://github.com/upptime/upptime>
