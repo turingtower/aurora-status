@@ -4,17 +4,17 @@
     "url": "$PROD_HEALTH_URL",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "aurora-platform",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 1533,
-    "timeDay": 728,
-    "timeWeek": 1533,
-    "timeMonth": 1533,
-    "timeYear": 1533,
+    "time": 1409,
+    "timeDay": 382,
+    "timeWeek": 1409,
+    "timeMonth": 1409,
+    "timeYear": 1409,
     "dailyMinutesDown": {}
   }
 ]
