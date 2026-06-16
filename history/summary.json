@@ -5,16 +5,19 @@
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "aurora-platform",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 1409,
-    "timeDay": 382,
-    "timeWeek": 1409,
-    "timeMonth": 1409,
-    "timeYear": 1409,
-    "dailyMinutesDown": {}
+    "uptime": "94.27%",
+    "uptimeDay": "70.29%",
+    "uptimeWeek": "94.27%",
+    "uptimeMonth": "94.27%",
+    "uptimeYear": "94.27%",
+    "time": 1302,
+    "timeDay": 27,
+    "timeWeek": 1302,
+    "timeMonth": 1302,
+    "timeYear": 1302,
+    "dailyMinutesDown": {
+      "2026-06-16": 35,
+      "2026-06-15": 393
+    }
   }
 ]
