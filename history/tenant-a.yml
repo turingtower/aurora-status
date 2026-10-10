@@ -1,0 +1,7 @@
+url: $TENANT_A_HEALTH_URL
+status: up
+code: 200
+responseTime: 422
+lastUpdated: 2026-10-10T17:53:44.927Z
+startTime: 2026-10-10T17:53:44.504Z
+generator: Upptime <https://github.com/upptime/upptime>

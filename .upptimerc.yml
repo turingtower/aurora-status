@@ -1,15 +1,55 @@
 # Aurora platform status — Upptime configuration
-# The monitored URL is a repository SECRET ($PROD_HEALTH_URL) so no hostname
-# appears in this public repo. One monitor on purpose: a simple
-# "Aurora is up / down" page — no per-environment or per-tenant detail.
+# Every monitored URL is a repository SECRET ($NAME) so no hostname appears in
+# this public repo. "Aurora Platform" is the headline monitor. The "Tenant A-D"
+# monitors (D-535) probe each production tenant's /api/health individually so
+# one tenant's outage is caught even when the platform probe is green. They
+# are deliberately NEUTRAL names: this repo and its status page are PUBLIC, so
+# neither a monitor name nor a secret name may identify a customer. The
+# letter -> tenant mapping lives only in the private aurora repo
+# (ops/INCIDENT-RUNBOOK.md, "Operator alerting") and in the secret values.
 owner: turingtower
 repo: aurora-status
+
+# Downtime issues are assigned to these GitHub users; GitHub then emails them
+# (no extra credentials needed — standard GitHub notification email).
+assignees:
+  - olufon-muyiwa
 
 sites:
   - name: Aurora Platform
     url: $PROD_HEALTH_URL
     expectedStatusCodes:
       - 200
+  - name: Tenant A
+    slug: tenant-a
+    url: $TENANT_A_HEALTH_URL
+    expectedStatusCodes:
+      - 200
+  - name: Tenant B
+    slug: tenant-b
+    url: $TENANT_B_HEALTH_URL
+    expectedStatusCodes:
+      - 200
+  - name: Tenant C
+    slug: tenant-c
+    url: $TENANT_C_HEALTH_URL
+    expectedStatusCodes:
+      - 200
+  - name: Tenant D
+    slug: tenant-d
+    url: $TENANT_D_HEALTH_URL
+    expectedStatusCodes:
+      - 200
+
+# Notifications are configured by REPOSITORY SECRETS, not in this file
+# (upptime/uptime-monitor src/helpers/notifme.ts reads them via getSecret, and
+# the generated workflows already pass both names in SECRETS_CONTEXT).
+# Microsoft Teams switches on once BOTH of these secrets exist:
+#   gh secret set NOTIFICATION_TEAMS_WEBHOOK_URL -R turingtower/aurora-status   (paste the URL)
+#   gh secret set NOTIFICATION_TEAMS -R turingtower/aurora-status --body true
+# Set the URL first: with NOTIFICATION_TEAMS=true and no URL every down/up
+# event logs a failed POST. Email is covered by `assignees` above, so no
+# NOTIFICATION_EMAIL_* / SMTP secrets are configured here on purpose.
 
 status-website:
   cname: status.aurora.turingtower.com
@@ -144,4 +184,5 @@ status-website:
     </style>
 
 # Probe cadence: every 5 minutes (Upptime default). Response-time graphs
-# commit daily. Incidents auto-open GitHub issues — watch the repo for email.
+# commit daily. Incidents auto-open GitHub issues assigned to `assignees`
+# above (GitHub emails the assignee).
